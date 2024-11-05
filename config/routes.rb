@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/items" => "items#index"
   get "/items" => "items#show"
   post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
   # Defines the root path route ("/")
   # root "posts#index"
 end
