@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/users/:id" => "users#show"
   post "/sessions" => "sessions#create"
   post "/favorites" => "favorites#create"
+  delete "/favorites/:id" => "favorites#destroy"
   # Defines the root path route ("/")
   # root "posts#index"
 end
