@@ -1,4 +1,10 @@
 class FavoritesController < ApplicationController
+  
+  def index
+    @favorites = Favorite.where(user_id: current_user.id)
+    render :index    
+  end
+  
   def create
     @favorite = Favorite.new(
       user_id: current_user.id,
@@ -10,7 +16,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     @favorite = Favorite.find_by(id: params[:id])
-    # @favorite.destroy
+    @favorite.destroy
     render json: {mesage: "favorite removed"}
   end
 end
